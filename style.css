@@ -111,3 +111,11 @@ input[type="radio"]{
     width: 100%;
     background-color: #eeaa5d;
 }
+.quiz__submit:hover{
+    background-color: #eeaa5dd0;
+}
+
+
+.quiz__submit:active{
+    background-color: #da974b;
+}
