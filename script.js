@@ -42,6 +42,8 @@ const questions = [
 
 ]
 
+
+const answersEl = document.querySelectorAll('.answer')
 const questionEl = document.querySelector('.quiz__question')
 const a_text = document.querySelector('.a_text')
 const b_text = document.querySelector('.b_text')
@@ -56,9 +58,8 @@ let currentQuiz = 0
 
 function showQuiz() {
 
+    deselectAnswers()
     const currentQuizData = questions[currentQuiz]
-
-    console.log(currentQuizData.question)
 
     questionEl.innerText = currentQuizData.question
     a_text.innerText = currentQuizData.a
@@ -68,18 +69,41 @@ function showQuiz() {
     
 }
 
-showQuiz()
+
+let answer = undefined
+let score = 0
+
+
+function getSelected() {
+
+    answersEl.forEach(answerEl => {
+
+        if(answerEl.checked){
+            answer = answerEl.id
+
+        }
+
+    })
+    
+    return answer
+}
+
 
 
 submitBtn.addEventListener('click', function(){
 
-    if(currentQuiz < questions.length){
-        showQuiz()
-        currentQuiz++
+        answer = getSelected()
 
-    }else{
-        infoMsg.innerText = "Congrats! Finished."
-        infoMsg.classList.add('is-visible')
-    }
+        if(answer){
+            currentQuiz++
+            
+            if(currentQuiz < questions.length){
+                showQuiz()
+        
+            }else{
+                infoMsg.innerText = "Congrats! Finished."
+                infoMsg.classList.add('is-visible')
+            }
 
+        }
 })
