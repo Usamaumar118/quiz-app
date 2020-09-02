@@ -102,6 +102,7 @@ input[type="radio"]:checked ~ .custom-radio::after{
 input[type="radio"]:checked ~ .quiz__ans__label{
     color: #444;
     font-weight: 500;
+    background-color: #ca8f4c1a;
 }
 
 input[type="radio"]{
