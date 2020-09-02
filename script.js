@@ -49,6 +49,8 @@ const c_text = document.querySelector('.c_text')
 const d_text = document.querySelector('.d_text')
 const submitBtn = document.querySelector('.quiz__submit')
 
+const infoMsg = document.querySelector('.info')
+
 let currentQuiz = 0
 
 
@@ -70,6 +72,14 @@ showQuiz()
 
 
 submitBtn.addEventListener('click', function(){
-    currentQuiz++
-    showQuiz()
+
+    if(currentQuiz < questions.length){
+        showQuiz()
+        currentQuiz++
+
+    }else{
+        infoMsg.innerText = "Congrats! Finished."
+        infoMsg.classList.add('is-visible')
+    }
+
 })
