@@ -132,7 +132,6 @@ input[type="radio"]{
 
 .info{
     display: none;
-    /* width: 100%; */
     position: absolute;
     top: -5rem;
     left: 50%;
@@ -162,6 +161,17 @@ input[type="radio"]{
     100%{
         top: -5rem;
     }
+
+
+}
+
+
+@media only screen and (max-width: 450px){
+
+    .quiz{
+        min-width: 100%;
+    }
+
 
 
 }
