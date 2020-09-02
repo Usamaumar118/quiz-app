@@ -127,3 +127,39 @@ input[type="radio"]{
 .quiz__submit:active{
     background-color: #da974b;
 }
+
+
+.info{
+    position: absolute;
+    top: -5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    background-color: #eeaa5d;
+    animation: slideDown 5s;
+    display: none;
+}
+
+.info.is-visible{
+    display: block;
+}
+
+
+@keyframes slideDown {
+
+    0%{
+        top: -5rem;
+    }
+    50%{
+        top: 1.5rem;
+    }
+    100%{
+        top: -5rem;
+    }
+
+
+}
