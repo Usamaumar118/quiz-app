@@ -4,9 +4,48 @@
     padding: 0;
 }
 
-body{
-    font-family: "Poppins" sans-serif;
+ul{
+    list-style-type: none;
 }
 
 
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    font-size: 62.5%;
+    padding: 5%;
+
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(315deg, #dbcab6 0%, #f7f7fa 74%) no-repeat;
+}
+
+
+.quiz{
+    border: 2px solid red;
+    background-color: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.quiz__question{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+
+.quiz__submit{
+    
+    color: #fff;
+    display: block;
+    padding: .5rem;
+    font-size: 1.2rem;
+    font-weight: 200;
+    border: none;
+    width: 100%;
+    background-color: #eeaa5d;
+
+
+}
