@@ -42,8 +42,7 @@ const questions = [
 
 ]
 
-
-const answersEl = document.querySelectorAll('.answer')
+const answersEls = document.querySelectorAll('.answer')
 const questionEl = document.querySelector('.quiz__question')
 const a_text = document.querySelector('.a_text')
 const b_text = document.querySelector('.b_text')
@@ -55,10 +54,12 @@ const infoMsg = document.querySelector('.info')
 
 let currentQuiz = 0
 
+showQuiz();
 
 function showQuiz() {
 
-    deselectAnswers()
+    deselectAnswers();
+
     const currentQuizData = questions[currentQuiz]
 
     questionEl.innerText = currentQuizData.question
@@ -76,18 +77,24 @@ let score = 0
 
 function getSelected() {
 
-    answersEl.forEach(answerEl => {
+    answersEls.forEach(answersEl => {
 
-        if(answerEl.checked){
-            answer = answerEl.id
-
-        }
-
+        if(answersEl.checked){
+            answer = answersEl.id
+        } 
     })
     
     return answer
 }
 
+
+function deselectAnswers(){
+
+    answersEls.forEach(answersEl => {
+        answersEl.checked = false
+    })
+
+}
 
 
 submitBtn.addEventListener('click', function(){
@@ -95,13 +102,22 @@ submitBtn.addEventListener('click', function(){
         answer = getSelected()
 
         if(answer){
+
+            console.log('outer', answer)
+
+
+            if(answer === questions[currentQuiz].correct){
+                score++
+                console.log(score)
+            }
+
             currentQuiz++
             
             if(currentQuiz < questions.length){
                 showQuiz()
-        
+                console.log('inner', answer)
             }else{
-                infoMsg.innerText = "Congrats! Finished."
+                infoMsg.innerText = `Congrats! Finished. Your Score is ${score}/5`
                 infoMsg.classList.add('is-visible')
             }
 
