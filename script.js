@@ -42,6 +42,7 @@ const questions = [
 
 ]
 
+const quizContainer = document.querySelector('.quiz')
 const answersEls = document.querySelectorAll('.answer')
 const questionEl = document.querySelector('.quiz__question')
 const a_text = document.querySelector('.a_text')
@@ -103,23 +104,24 @@ submitBtn.addEventListener('click', function(){
 
         if(answer){
 
-            console.log('outer', answer)
-
-
             if(answer === questions[currentQuiz].correct){
                 score++
-                console.log(score)
             }
 
             currentQuiz++
             
             if(currentQuiz < questions.length){
                 showQuiz()
-                console.log('inner', answer)
-            }else{
-                infoMsg.innerText = `Congrats! Finished. Your Score is ${score}/5`
-                infoMsg.classList.add('is-visible')
-            }
+            } else {
+
+                quizContainer.innerHTML = `
+                <h2 class="quiz__question quiz__question--score">
+                Congrats! Finished. Your Score is ${score}/5
+                </h2>
+
+                <button onclick="location.reload()" class="quiz__submit">Play Again</button>
+            `
+           }
 
         }
 })
