@@ -46,6 +46,11 @@ body{
     color: #444;
 }
 
+.quiz__question--score{
+    font-size: 1.8rem;
+    padding: 2rem;
+    margin-bottom: 0;
+}
 
 
 .ans-list-item{
@@ -129,41 +134,6 @@ input[type="radio"]{
     background-color: #da974b;
 }
 
-
-.info{
-    display: none;
-    position: absolute;
-    top: -5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-    color: #fff;
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
-    border-radius: .8rem;
-    background-color: #eeaa5d;
-    animation: slideDown 3s;
-}
-
-.info.is-visible{
-    display: block;
-}
-
-
-@keyframes slideDown {
-
-    0%{
-        top: -5rem;
-    }
-    50%{
-        top: 1.5rem;
-    }
-    100%{
-        top: -5rem;
-    }
-
-
-}
 
 
 @media only screen and (max-width: 450px){
