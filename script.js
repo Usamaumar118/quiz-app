@@ -8,7 +8,7 @@ const questions = [
         correct: 'a'
     },
     {
-        question: 'Which is the capital city of Pakistan?',
+        question: 'Which is the capital of Pakistan?',
         a: 'Karachi',
         b: 'Lahore',
         c: 'Islamabad',
@@ -24,7 +24,7 @@ const questions = [
         correct: 'b'
     },
     {
-        question: "Pakistans flag has:",
+        question: "Pakistan\'s flag has:",
         a: 'Two colors',
         b: 'Three colors',
         c: 'Four colors',
@@ -32,7 +32,7 @@ const questions = [
         correct: 'a'
     },
     {
-        question: 'Pakistans National anthem was wrote by?',
+        question: 'Pakistan\'s National anthem was wrote by?',
         a: 'Allama Iqbal',
         b: 'Hafeez Jalandhri',
         c: 'Ch Rehmat Ali',
